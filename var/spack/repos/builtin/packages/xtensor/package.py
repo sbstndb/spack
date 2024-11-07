@@ -18,6 +18,7 @@ class Xtensor(CMakePackage):
     license("BSD-3-Clause")
 
     version("develop", branch="master")
+    version("0.25.0", sha256="32d5d9fd23998c57e746c375a544edf544b74f0a18ad6bc3c38cbba968d5e6c7")
     version("0.24.1", sha256="dd1bf4c4eba5fbcf386abba2627fcb4a947d14a806c33fde82d0cc1194807ee4")
     version("0.24.0", sha256="37738aa0865350b39f048e638735c05d78b5331073b6329693e8b8f0902df713")
     version("0.23.10", sha256="2e770a6d636962eedc868fef4930b919e26efe783cd5d8732c11e14cf72d871c")
@@ -32,14 +33,19 @@ class Xtensor(CMakePackage):
     variant("xsimd", default=True, description="Enable SIMD intrinsics")
     variant("tbb", default=True, description="Enable TBB parallelization")
 
+
     depends_on("xtl", when="@develop")
-    depends_on("xtl@0.7.2:0.7", when="@0.23.2:")
+    depends_on("xtl@0.7.5:0.7", when="@0.25.0:")
+    depends_on("xtl@0.7.2:0.7", when="@0.23.2")
     depends_on("xtl@0.6.4:0.6", when="@0.20.7")
     depends_on("xtl@0.4.0:0.4", when="@0.15.1")
     depends_on("xtl@0.3.3:0.3", when="@0.13.1")
     depends_on("xsimd", when="@develop")
 
-    depends_on("xsimd@8.0.5:", when="@0.24.1: +xsimd")
+
+
+    depends_on("xsimd@11.0.0:", when="@0.25.0: +xsimd")
+    depends_on("xsimd@8.0.5:", when="@0.24.1 +xsimd")
     depends_on("xsimd@8.0.2:", when="@0.24.0 +xsimd")
     depends_on("xsimd@7.4.10:7", when="@0.23.4:0.23 +xsimd")
     depends_on("xsimd@7.4.9:7", when="@0.23.2 +xsimd")
