@@ -17,6 +17,7 @@ class Xtensor(CMakePackage):
     license("BSD-3-Clause")
 
     version("develop", branch="master")
+    version("0.25.0", sha256="32d5d9fd23998c57e746c375a544edf544b74f0a18ad6bc3c38cbba968d5e6c7")
     version("0.24.1", sha256="dd1bf4c4eba5fbcf386abba2627fcb4a947d14a806c33fde82d0cc1194807ee4")
     version("0.24.0", sha256="37738aa0865350b39f048e638735c05d78b5331073b6329693e8b8f0902df713")
     version("0.23.10", sha256="2e770a6d636962eedc868fef4930b919e26efe783cd5d8732c11e14cf72d871c")
